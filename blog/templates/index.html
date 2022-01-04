@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>All Blogs</h1>
+    <h1 class="page-about">Fire Media 2</h1>
+    <p class="index-text-1">
+        Join a community of over {{user_count}} user{{user_count|pluralize}}.
+        Read over {{blog_count}} blog{{blog_count|pluralize}}.
+        Join Fire Media 2 Today.
+    </p>
 {% endblock %}

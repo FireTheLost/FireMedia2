@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if all_blogs %}
+      <h1 class="page-about">All Blog Posts:</h1>
+
+      <ul>
+        {% for blog in all_blogs %}
+          <div class="blog">
+            <a href="{{ blog.get_absolute_url }}">
+              <h1 class="blog-title">{{ blog.title }}</h1>
+              <h1 class="blog-author">By: {{blog.author}}</h1>
+              <p class="blog-published">{{blog.published}}</p>
+              <p class="blog-description">{{blog.description}}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </ul>
+      {% else %}
+        <h1 class="page-about">There Are No Blog Posts Yet</h1>
+    {% endif %}
+{% endblock %}

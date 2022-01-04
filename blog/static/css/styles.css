@@ -1,0 +1,108 @@
+#navigation-bar {
+    padding: 14px;
+
+	display: flex;
+	display: -webkit-flex;
+
+	justify-content:space-between;
+	-webkit-justify-content:space-between;
+
+	background-color: #0B75A6;
+	background-image: linear-gradient(to left, #4E9BBE 0%, #0B75A6 50%);
+}
+
+.navigation-list {
+	list-style-type: none;
+	display: flex;
+	display: -webkit-flex;
+}
+
+.navigation-element {
+	font-size: 23px;
+	margin: 9px;
+	margin-left: 27px;
+}
+
+.navigation-element:hover {
+	font-size: 23px;
+	text-decoration: underline;
+}
+
+.navigation-link {
+	color: #FFFFFF;
+	font-size: 27px;
+
+    font-family: calibri;
+	text-decoration: none;
+}
+
+.page-about {
+    font-family: calibri;
+    margin: 14px;
+    padding: 14px;
+    font-size: 36px;
+}
+
+.blog {
+    background-color: #f2f2f2;
+    margin: 20px 20px 20px 55px;
+    padding: 25px;
+    border-radius: 15px;
+    width: 25%;
+    font-family: calibri;
+}
+
+.blog-title {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.blog-author {
+    font-size: 20px;
+    margin-bottom: 17px;
+}
+
+.blog-published {
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.blog-description {
+    font-size: 17px;
+}
+
+.index-text-1 {
+    font-family: calibri;
+    margin-left: 28px;
+    font-size: 20px;
+    width: 50%;
+}
+
+.pagination {
+    display: flex;
+	display: -webkit-flex;
+}
+
+.pagination-previous {
+    font-family: calibri;
+    font-size: 20px;
+    position: absolute;
+    padding: 20px;
+    margin-left: 40px;
+}
+
+.pagination-page {
+    font-family: calibri;
+    font-size: 20px;
+    position: absolute;
+    padding: 20px;
+    margin-left: 165px;
+}
+
+.pagination-next {
+    font-family: calibri;
+    font-size: 20px;
+    position: absolute;
+    padding: 20px;
+    margin-left: 300px;
+}
