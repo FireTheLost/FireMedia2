@@ -12,12 +12,12 @@ class Blog(models.Model):
     author = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
 
     body = models.TextField(max_length=65536, help_text='The Main Body Of The Blog Post')
-    published = models.DateField(null=False, blank=False)
+    published = models.DateTimeField(null=False, blank=False)
 
-    visibility = models.CharField(max_length=16)
+    visibility = models.CharField(max_length=16, default="Public")
 
     def __str__(self):
-        return f'{self.title}\n{self.description} - {self.author}\n{self.published}'
+        return f'{self.title}'
 
     def get_absolute_url(self):
         return reverse('blog-post', args=[str(self.id)])
