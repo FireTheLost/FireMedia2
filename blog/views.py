@@ -1,27 +1,7 @@
-import math
-
-from django.shortcuts import render
-from django.urls import reverse
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 
-from .models import Blog, User
-
-
-def index(request):
-    users = User.objects.all().count()
-    user_count = math.floor(math.log10(users)) if users > 10 else users - 1
-
-    blogs = Blog.objects.all().count()
-    blog_count = math.floor(math.log10(blogs)) if blogs > 10 else blogs - 1
-
-    context = {
-        'title': 'Blog Home',
-        'user_count': user_count,
-        'blog_count': blog_count,
-    }
-
-    # Render the HTML template index.html with the data in the context variable
-    return render(request, 'index.html', context=context)
+from .models import Blog
 
 
 class BlogListView(generic.ListView):
@@ -33,3 +13,11 @@ class BlogListView(generic.ListView):
         context = super(BlogListView, self).get_context_data(**kwargs)
         context['title'] = 'All Blogs'
         return context
+
+
+class BlogDetailView(generic.DetailView):
+    model = Blog
+
+    def blog_detail_view(request, primary_key):
+        blog = get_object_or_404(Blog, pk=primary_key)
+        return render(request, 'catalog/book_detail.html', context={'title': 'Read Blog', ' blog': blog})
