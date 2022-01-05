@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div id="read-blog">
-    <h1>{{ blog.title }}</h1>
-    <h2><b>By: {{ blog.author }}</b></h2>
-    <p>{{ blog.published }}</p>
-    <p>{{ blog.description }}</p>
+  <div class="read-blog">
+    <h1 class="read-blog-title">{{ blog.title }}</h1>
+    <br>
+    <h2 class="read-blog-author"><b>By: {{ blog.author }}</b></h2>
+    <br>
+    <p class="read-blog-published">{{ blog.published }}</p>
+    <br>
+    <p class="read-blog-description">{{ blog.description }}</p>
+    <br>
     <hr>
-    <p>{{ blog.body }}</p>
+    <br><br>
+    <p class="read-blog-body">{{ blog.body }}</p>
   </div>
 {% endblock %}
