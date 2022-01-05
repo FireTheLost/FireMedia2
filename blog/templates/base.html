@@ -23,10 +23,10 @@
 <body>
   <nav id="navigation-bar">
     <ul class="navigation-list">
-        <!-- Add Logo Here When I Create It -->
+        <li class="navigation-element"><a id="name" href="{% url 'index' %}">FireMedia</a></li>
 	</ul>
     <ul class="navigation-list">
-	  <li class="navigation-element"><a class="navigation-link" href="{% url 'index' %}">Home</a></li>
+        <li class="navigation-element"><a class="navigation-link" href="{% url 'index' %}">Home</a></li>
 	</ul>
   </nav>
   <div>{% block content %}{% endblock %}</div>
@@ -35,10 +35,14 @@
         <div class="pagination">
             {% if page_obj.has_previous %}
                 <a class="pagination-previous" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">&lt; Previous</a>
+            {% else %}
+                <a class="pagination-previous">No Previous Page</a>
             {% endif %}
             <p class="pagination-page">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
             {% if page_obj.has_next %}
                 <a class="pagination-next" href="{{ request.path }}?page={{ page_obj.next_page_number }}">Next &gt;</a>
+            {% else %}
+                <a class="pagination-next">No Next Page</a>
             {% endif %}
         </div>
     {% endif %}

@@ -4,7 +4,7 @@
     {% if all_blogs %}
       <h1 class="page-about">All Blog Posts:</h1>
 
-      <ul>
+      <div id="all-blogs">
         {% for blog in all_blogs %}
           <div class="blog">
             <a href="{{ blog.get_absolute_url }}">
@@ -15,7 +15,7 @@
             </a>
           </div>
         {% endfor %}
-      </ul>
+      </div>
       {% else %}
         <h1 class="page-about">There Are No Blog Posts Yet</h1>
     {% endif %}
