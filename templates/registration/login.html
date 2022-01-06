@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="login-div">
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <h1 id="login-login">Login</h1>
+
+    <br>
+    {{ form.username.label }}
+    {{ form.username }}
+    <br>
+    <br>
+    {{ form.password.label }}
+    {{ form.password }}
+    <br>
+    <br>
+
+    <input id="login-input" type="submit" value="Login"/>
+    <input name="next" type="hidden" value="{{ next }}"/>
+  </form>
+  {% if form.errors %}
+    <p class="error-message">Sorry, Your Login Details Don't Match. Please Enter Them Again</p>
+  {% endif %}
+</div>
+
+{% endblock %}

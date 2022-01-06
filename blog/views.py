@@ -7,7 +7,11 @@ from .models import Blog
 class BlogListView(generic.ListView):
     model = Blog
     context_object_name = 'all_blogs'
-    paginate_by = 15
+    paginate_by = 9
+
+    def get_ordering(self):
+        ordering = self.request.GET.get('ordering', '-published')
+        return ordering
 
     def get_context_data(self, **kwargs):
         context = super(BlogListView, self).get_context_data(**kwargs)
@@ -20,7 +24,7 @@ class BlogDetailView(generic.DetailView):
 
     def blog_detail_view(request, primary_key):
         blog = get_object_or_404(Blog, pk=primary_key)
-        return render(request, 'catalog/book_detail.html', context={' blog': blog})
+        return render(request, 'catalog/book_detail.html', context={'blog': blog})
 
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data(**kwargs)
