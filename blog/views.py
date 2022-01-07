@@ -1,7 +1,13 @@
+import datetime
+import uuid
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.views.generic.edit import CreateView
 
-from .models import Blog
+from .models import Blog, User
 
 
 class BlogListView(generic.ListView):
@@ -30,3 +36,9 @@ class BlogDetailView(generic.DetailView):
         context = super(BlogDetailView, self).get_context_data(**kwargs)
         context['title'] = 'Read Blog'
         return context
+
+
+class CreateBlog(LoginRequiredMixin, CreateView):
+    model = Blog
+    fields = ['title', 'description', 'body', 'author']
+    initial = {'id': uuid.uuid4, 'published': datetime.datetime.now(), 'visibility': 'Public'}
