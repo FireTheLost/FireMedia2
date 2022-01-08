@@ -13,7 +13,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% block title %}<title>{{ title }} | Fire Media</title>{% endblock %}
+  {% block title %}
+    <title>{{ title }} | Fire Media</title>
+  {% endblock %}
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   {% load static %}
@@ -29,9 +31,9 @@
         <li class="navigation-element"><a class="navigation-link" href="{% url 'index' %}">Blogs</a></li>
         {% if user.is_authenticated %}
             <li class="navigation-element"><a class="navigation-link" href="{% url 'new-blog' %}">New Blog</a></li>
-            <li class="navigation-element"><a class="navigation-link" href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+            <li class="navigation-element"><a class="navigation-link" href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
         {% else %}
-            <li class="navigation-element"><a class="navigation-link" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+            <li class="navigation-element"><a class="navigation-link" href="{% url 'login' %}?next={{request.path}}">Login</a></li>
         {% endif %}
 	</ul>
   </nav>

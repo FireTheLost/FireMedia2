@@ -172,13 +172,16 @@
 
 #login-login {
     font-family: calibri;
-    margin-top: 15px;
+    margin-top: 10px;
     font-size: 40px;
+    margin-bottom: 30px;
 }
 
 #login-input {
 	width: 25%;
 	height: 33px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 	border: 1px solid #0f0f0f;
 	border-radius: 10px;
 	background-color: white;
@@ -191,4 +194,31 @@
     color: red;
     font-size: 21px;
     font-family: calibri;
+}
+
+#id_username {
+    width: 50%;
+    height: 30px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 7px 0px 20px 0px;
+}
+
+#id_password {
+    width: 50%;
+    height: 30px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 7px 0px 20px 0px;
+}
+
+.login-label {
+    font-family: calibri;
+    margin-left: 50%;
+    margin-bottom: 5px;
+    font-size: 17px;
+    text-align: left;
+    transform: translate(-53%, 0%);
 }

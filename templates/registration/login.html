@@ -7,14 +7,10 @@
     {% csrf_token %}
     <h1 id="login-login">Login</h1>
 
-    <br>
-    {{ form.username.label }}
+    <p class="login-label">Username</p>
     {{ form.username }}
-    <br>
-    <br>
-    {{ form.password.label }}
+    <p class="login-label">Password</p>
     {{ form.password }}
-    <br>
     <br>
 
     <input id="login-input" type="submit" value="Login"/>
