@@ -6,8 +6,12 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls'), {'title': 'Login'}),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', include('blog.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+def context_data(request):
+    return {'title': 'Login'}
