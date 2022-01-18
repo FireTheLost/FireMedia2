@@ -40,7 +40,6 @@ class BlogDetailView(generic.DetailView):
 class CreateBlog(LoginRequiredMixin, CreateView):
     model = Blog
     fields = ['title', 'description', 'body', 'author']
-    initial = {'id': uuid.uuid4, 'published': datetime.datetime.now(), 'visibility': 'Public'}
 
     def get_context_data(self, **kwargs):
         context = super(CreateBlog, self).get_context_data(**kwargs)

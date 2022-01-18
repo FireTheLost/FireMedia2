@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.urls import reverse
 
@@ -12,7 +14,7 @@ class Blog(models.Model):
     author = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
 
     body = models.TextField(max_length=65536, help_text='The Main Body Of The Blog Post')
-    published = models.DateTimeField(null=False, blank=False)
+    published = models.DateTimeField(default=datetime.datetime.now())
 
     visibility = models.CharField(max_length=16, default="Public")
 
